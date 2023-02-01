@@ -56,3 +56,34 @@ Next i
 End Function
 
 
+
+
+
+
+Public Function coef(a As Double, b As Double, c As Double, d As Double) As Variant
+
+    coef = Array(0.2, -3, 0.5, -3)
+End Function
+
+
+
+Public Function poly(x As Double) As Double
+
+    Dim coefs As Variant
+    coefs = coef(3)
+
+    poly = coefs(0) * x ^ 3 - coefs(1) * x ^ 2 - coefs(2) * x + coefs(3)
+
+End Function
+
+
+Public Function MySpline(x As Double) As Double
+
+    If x < 0 Then
+        MySpline = poly(x)
+    Else
+        MySpline = poly(x) * -1
+    End If
+
+End Function
+
